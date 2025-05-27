@@ -6,7 +6,7 @@
   ],
   "scripts": {},
   "devDependencies": {
-    "@tsconfig/node22": "^22",
+    "@tsconfig/node22": "^22.0.2",
     "typescript": "^5"
   },
   "dependencies": {
