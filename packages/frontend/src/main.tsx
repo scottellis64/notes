@@ -14,13 +14,35 @@ import {
 } from "react-router-dom";
 
 import NotFound from './containers/NotFound.tsx'
+import Login from './containers/Login.tsx';
+import Signup from './containers/Signup.tsx';
+import NewNote from './containers/NewNote.tsx';
+import Notes from './containers/Notes.tsx';
+import Settings from './containers/Settings.tsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <NotFound />,
-  },
+    children: [
+      {
+        path: "/login",
+        element: <Login />,
+      }, {
+        path: "/signup",
+        element: <Signup />,
+      }, {
+        path: "/notes/new",
+        element: <NewNote />,
+      }, {
+        path: "/notes/:id",
+        element: <Notes />,
+      }, {
+        path: "/settings",
+        element: <Settings />,
+      }]
+  }
 ]);
 
 Amplify.configure({
